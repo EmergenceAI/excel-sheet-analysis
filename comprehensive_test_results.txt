@@ -1,0 +1,142 @@
+2025-12-14 23:45:11,865 - INFO - Extracted 16 blocks of data.
+2025-12-14 23:45:11,868 - INFO - Cleaned block for Q1 2021: 200 rows
+2025-12-14 23:45:11,871 - INFO - Cleaned block for Q2 2021: 200 rows
+2025-12-14 23:45:11,873 - INFO - Cleaned block for Q3 2021: 200 rows
+2025-12-14 23:45:11,876 - INFO - Cleaned block for Q4 2021: 200 rows
+2025-12-14 23:45:11,878 - INFO - Cleaned block for Q1 2022: 200 rows
+2025-12-14 23:45:11,881 - INFO - Cleaned block for Q2 2022: 200 rows
+2025-12-14 23:45:11,884 - INFO - Cleaned block for Q3 2022: 200 rows
+2025-12-14 23:45:11,886 - INFO - Cleaned block for Q4 2022: 200 rows
+2025-12-14 23:45:11,889 - INFO - Cleaned block for Q1 2023: 200 rows
+2025-12-14 23:45:11,892 - INFO - Cleaned block for Q2 2023: 200 rows
+2025-12-14 23:45:11,894 - INFO - Cleaned block for Q3 2023: 200 rows
+2025-12-14 23:45:11,897 - INFO - Cleaned block for Q4 2023: 200 rows
+2025-12-14 23:45:11,900 - INFO - Cleaned block for Q1 2024: 200 rows
+2025-12-14 23:45:11,902 - INFO - Cleaned block for Q2 2024: 200 rows
+2025-12-14 23:45:11,905 - INFO - Cleaned block for Q3 2024: 200 rows
+2025-12-14 23:45:11,907 - INFO - Cleaned block for Q4 2024: 200 rows
+2025-12-14 23:45:11,910 - INFO - Assigned Sale_IDs to the data.
+2025-12-14 23:45:11,911 - INFO - Output DataFrame validated successfully.
+2025-12-14 23:45:11,915 - INFO - Transformed data saved to results/final_validated_output.csv.
+2025-12-14 23:45:12,053 - INFO - Validating generated data against ground truth...
+2025-12-14 23:45:12,272 - INFO - PASSED: 100.00% accuracy, 0 mismatches
+================================================================================
+COMPREHENSIVE TEST OF CORRECTED TRANSFORMATION CODE
+================================================================================
+
+[1/5] Running transformation...
+✓ Transformation completed
+  - Output rows: 3200
+  - Output columns: ['Sale_ID (PK)', 'Quarter', 'Region', 'Product', 'Metric', 'Value']
+
+[2/5] Loading ground truth...
+✓ Ground truth loaded
+  - Expected rows: 3200
+  - Expected columns: ['Sale_ID (PK)', 'Quarter', 'Region', 'Product', 'Metric', 'Value']
+
+[3/5] Running validation...
+✓ Validation completed
+  - Passed: True
+  - Accuracy: 100.00%
+  - Mismatches: 0
+
+[4/5] Detailed comparison...
+✓ Row-by-row comparison
+  - Exact row matches: 3200/3200
+  - Match rate: 100.00%
+
+[5/5] Data type verification...
+Generated DataFrame dtypes:
+  - Sale_ID (PK): int64
+  - Quarter: object
+  - Region: object
+  - Product: object
+  - Metric: object
+  - Value: int64
+
+Ground Truth DataFrame dtypes:
+  - Sale_ID (PK): int64
+  - Quarter: object
+  - Region: object
+  - Product: object
+  - Metric: object
+  - Value: int64
+
+================================================================================
+SAMPLE OUTPUT (First 30 rows)
+================================================================================
+ Sale_ID (PK) Quarter Region   Product     Metric  Value
+            1 Q1 2021  North    Laptop Units Sold    188
+            2 Q1 2021  North    Laptop    Revenue 186700
+            3 Q1 2021  North   Monitor Units Sold    157
+            4 Q1 2021  North   Monitor    Revenue  37170
+            5 Q1 2021  North    Tablet Units Sold    110
+            6 Q1 2021  North    Tablet    Revenue  48920
+            7 Q1 2021  North     Phone Units Sold    192
+            8 Q1 2021  North     Phone    Revenue 159490
+            9 Q1 2021  North   Printer Units Sold     69
+           10 Q1 2021  North   Printer    Revenue  12760
+           11 Q1 2021  North    Router Units Sold     84
+           12 Q1 2021  North    Router    Revenue  11490
+           13 Q1 2021  North   Headset Units Sold    133
+           14 Q1 2021  North   Headset    Revenue  10820
+           15 Q1 2021  North      Dock Units Sold     77
+           16 Q1 2021  North      Dock    Revenue  11970
+           17 Q1 2021  North    Webcam Units Sold     92
+           18 Q1 2021  North    Webcam    Revenue   6540
+           19 Q1 2021  North Projector Units Sold     58
+           20 Q1 2021  North Projector    Revenue  35040
+           21 Q1 2021  South    Laptop Units Sold    216
+           22 Q1 2021  South    Laptop    Revenue 213560
+           23 Q1 2021  South   Monitor Units Sold    152
+           24 Q1 2021  South   Monitor    Revenue  31060
+           25 Q1 2021  South    Tablet Units Sold    109
+           26 Q1 2021  South    Tablet    Revenue  49320
+           27 Q1 2021  South     Phone Units Sold    144
+           28 Q1 2021  South     Phone    Revenue 117360
+           29 Q1 2021  South   Printer Units Sold     70
+           30 Q1 2021  South   Printer    Revenue  12420
+
+================================================================================
+SAMPLE GROUND TRUTH (First 30 rows)
+================================================================================
+ Sale_ID (PK) Quarter Region   Product     Metric  Value
+            1 Q1 2021  North    Laptop Units Sold    188
+            2 Q1 2021  North    Laptop    Revenue 186700
+            3 Q1 2021  North   Monitor Units Sold    157
+            4 Q1 2021  North   Monitor    Revenue  37170
+            5 Q1 2021  North    Tablet Units Sold    110
+            6 Q1 2021  North    Tablet    Revenue  48920
+            7 Q1 2021  North     Phone Units Sold    192
+            8 Q1 2021  North     Phone    Revenue 159490
+            9 Q1 2021  North   Printer Units Sold     69
+           10 Q1 2021  North   Printer    Revenue  12760
+           11 Q1 2021  North    Router Units Sold     84
+           12 Q1 2021  North    Router    Revenue  11490
+           13 Q1 2021  North   Headset Units Sold    133
+           14 Q1 2021  North   Headset    Revenue  10820
+           15 Q1 2021  North      Dock Units Sold     77
+           16 Q1 2021  North      Dock    Revenue  11970
+           17 Q1 2021  North    Webcam Units Sold     92
+           18 Q1 2021  North    Webcam    Revenue   6540
+           19 Q1 2021  North Projector Units Sold     58
+           20 Q1 2021  North Projector    Revenue  35040
+           21 Q1 2021  South    Laptop Units Sold    216
+           22 Q1 2021  South    Laptop    Revenue 213560
+           23 Q1 2021  South   Monitor Units Sold    152
+           24 Q1 2021  South   Monitor    Revenue  31060
+           25 Q1 2021  South    Tablet Units Sold    109
+           26 Q1 2021  South    Tablet    Revenue  49320
+           27 Q1 2021  South     Phone Units Sold    144
+           28 Q1 2021  South     Phone    Revenue 117360
+           29 Q1 2021  South   Printer Units Sold     70
+           30 Q1 2021  South   Printer    Revenue  12420
+
+================================================================================
+FINAL VERDICT
+================================================================================
+✅ PERFECT MATCH - Code works flawlessly\!
+✓ 100% accuracy (3200/3200 rows match exactly)
+✓ All schema validations passed
+✓ Ready for production use
+================================================================================

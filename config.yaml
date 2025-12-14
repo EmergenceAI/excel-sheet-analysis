@@ -1,8 +1,8 @@
 llm:
-  provider: "anthropic"  # or "openai"
-  model: "claude-sonnet-4"  # or "gpt-4"
-  api_key_env: "ANTHROPIC_API_KEY"
-  max_tokens: 8000
+  provider: "openai"  # or "anthropic"
+  model: "gpt-4o"  # GPT-4o with 128K context (much better than gpt-4)
+  api_key_env: "OPENAI_API_KEY"
+  max_tokens: 8000  # GPT-4o has 128K context, so we can use more tokens
   temperature: 0.1
 
 analysis:

@@ -4,7 +4,7 @@ import os
 import logging
 from typing import Dict, List, Optional
 from anthropic import Anthropic
-import openai
+from openai import OpenAI
 
 logger = logging.getLogger(__name__)
 
@@ -35,8 +35,7 @@ class LLMClient:
         if self.provider == 'anthropic':
             self.client = Anthropic(api_key=self.api_key)
         elif self.provider == 'openai':
-            openai.api_key = self.api_key
-            self.client = openai
+            self.client = OpenAI(api_key=self.api_key)
         else:
             raise ValueError(f"Unsupported LLM provider: {self.provider}")
 
@@ -80,7 +79,7 @@ class LLMClient:
         return response.content[0].text
 
     def _generate_openai(self, prompt: str, system_prompt: Optional[str] = None) -> str:
-        """Generate using OpenAI."""
+        """Generate using OpenAI (new API v1.0+)."""
         messages = []
 
         if system_prompt:
@@ -88,7 +87,7 @@ class LLMClient:
 
         messages.append({"role": "user", "content": prompt})
 
-        response = self.client.ChatCompletion.create(
+        response = self.client.chat.completions.create(
             model=self.model,
             messages=messages,
             max_tokens=self.max_tokens,
