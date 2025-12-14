@@ -42,6 +42,8 @@ Thumbs.db
 *.xls
 *.csv
 !example.xlsx
+!messy_sales_report_only.xlsx
+!sales_data_ground_truth_only.xlsx
 
 # Logs
 *.log
