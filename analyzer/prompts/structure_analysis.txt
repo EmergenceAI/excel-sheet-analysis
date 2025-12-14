@@ -1,0 +1,72 @@
+You are an expert Excel data analyst. Analyze the following Excel file structure and provide detailed insights.
+
+EXCEL FILE INFORMATION:
+{excel_info}
+
+EXCEL PREVIEW (first {sample_rows} rows of sheet '{sheet_name}'):
+{excel_preview}
+
+TASK:
+Analyze this Excel file structure and identify:
+
+1. LAYOUT PATTERN:
+   - What is the overall layout? (wide format, long format, repeating blocks, pivot table, etc.)
+   - Are there repeating patterns or sections?
+   - If there are blocks, how many and how are they separated?
+
+2. HEADER STRUCTURE:
+   - Which row(s) contain headers?
+   - Is it single-level or multi-level headers?
+   - Are there merged cells in headers? What do they represent?
+   - What are the header categories/labels?
+
+3. DATA ROWS:
+   - Where does actual data start (row number)?
+   - What pattern indicates the end of data? (empty row, total row, etc.)
+   - How many data rows per block/section?
+
+4. NOISE ELEMENTS:
+   - Are there title rows, subtitle rows, or decorative elements?
+   - Are there footer rows, total rows, or summary rows?
+   - Are there empty spacer rows? Where and why?
+   - Are there footnotes or narrative text?
+
+5. BUSINESS ENTITIES:
+   - What business dimensions are represented? (e.g., Region, Product, Time, Customer)
+   - What appears to be in rows vs columns?
+   - Are there any nested hierarchies?
+
+OUTPUT FORMAT (JSON):
+Respond with ONLY valid JSON in this exact structure:
+{{
+  "layout_type": "description of overall layout",
+  "sheets": ["sheet1", "sheet2"],
+  "patterns": {{
+    "has_repeating_blocks": true/false,
+    "block_separator": "description of what separates blocks",
+    "block_count": number or "unknown",
+    "block_structure": "description"
+  }},
+  "headers": {{
+    "row_indices": [list of row numbers that contain headers],
+    "type": "single_level" or "multi_level",
+    "has_merged_cells": true/false,
+    "structure_description": "description"
+  }},
+  "data_rows": {{
+    "start_row": number,
+    "end_indicator": "description of how data section ends",
+    "rows_per_block": number or "varies"
+  }},
+  "noise_elements": [
+    {{
+      "type": "title/footer/spacer/total/footnote",
+      "location": "row numbers or description",
+      "description": "what it contains"
+    }}
+  ],
+  "business_entities_detected": ["entity1", "entity2"],
+  "confidence_score": 0.0 to 1.0
+}}
+
+BE SPECIFIC. Include actual row numbers and examples from the data shown.
