@@ -1,0 +1,71 @@
+You are an expert data analyst. Analyze the semantic meaning and business context of this Excel data.
+
+STRUCTURE ANALYSIS RESULTS:
+{structure_analysis}
+
+SAMPLE DATA FROM EXCEL:
+{data_sample}
+
+TASK:
+Extract the business meaning from this data:
+
+1. BUSINESS ENTITIES:
+   - What real-world entities are represented? (Customer, Product, Region, Time Period, etc.)
+   - What is the grain/level of detail? (e.g., "one row per product per region per quarter")
+
+2. METRICS:
+   - What measurements/metrics are being tracked? (Revenue, Quantity, Units Sold, etc.)
+   - What are the units? (dollars, items, percentages, etc.)
+
+3. DIMENSIONS:
+   - What are the dimensions for slicing/dicing the data?
+   - Time dimension: What time periods? (daily, monthly, quarterly, yearly)
+   - Geography dimension: What geographic levels? (country, region, city, etc.)
+   - Product dimension: What product categories or hierarchies?
+   - Other dimensions?
+
+4. DATA TYPES:
+   - For each column/field, what is the expected data type?
+   - Are there any categorical values? What are the valid categories?
+
+5. RELATIONSHIPS:
+   - How do the entities relate to each other?
+   - Is this a fact table or dimension table concept?
+   - What would be natural keys or unique identifiers?
+
+OUTPUT FORMAT (JSON):
+{{
+  "entities": ["entity1", "entity2"],
+  "grain": "description of one row/record",
+  "metrics": [
+    {{
+      "name": "metric name",
+      "description": "what it measures",
+      "unit": "unit of measurement",
+      "data_type": "integer/float/currency"
+    }}
+  ],
+  "dimensions": {{
+    "time": {{
+      "present": true/false,
+      "field_name": "field name or null",
+      "granularity": "day/week/month/quarter/year"
+    }},
+    "geography": {{
+      "present": true/false,
+      "field_name": "field name or null",
+      "levels": ["level1", "level2"]
+    }},
+    "product": {{
+      "present": true/false,
+      "field_name": "field name or null",
+      "categories": ["cat1", "cat2"]
+    }},
+    "other": []
+  }},
+  "data_types": {{
+    "field_name": "data_type"
+  }},
+  "fact_type": "sales_transaction/inventory/customer_data/etc",
+  "confidence_score": 0.0 to 1.0
+}}

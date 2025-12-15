@@ -1,0 +1,28 @@
+The transformation code produced errors or low accuracy. Debug and fix the code.
+
+=== CURRENT CODE ===
+{current_code}
+
+=== VALIDATION REPORT ===
+{validation_report}
+
+=== SAMPLE MISMATCHES ===
+{mismatch_examples}
+
+=== ANALYSIS ===
+What went wrong and why?
+
+=== TASK ===
+1. Identify the root cause of the errors/mismatches
+2. Fix the transformation logic
+3. Ensure the output matches the target schema exactly
+4. Return the COMPLETE corrected Python script
+
+Requirements:
+- Fix ALL issues identified in the validation report
+- Maintain the same code structure (imports, functions, main)
+- Add comments explaining what was fixed
+- Ensure robustness and error handling
+
+OUTPUT:
+Return ONLY the complete, corrected Python code (ready to execute).

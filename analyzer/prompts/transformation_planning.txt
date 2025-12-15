@@ -1,0 +1,70 @@
+You are an expert data transformation architect. Plan how to transform the messy source Excel into the target ground truth format.
+
+SOURCE STRUCTURE ANALYSIS:
+{source_structure}
+
+SOURCE SEMANTIC ANALYSIS:
+{source_semantic}
+
+TARGET SCHEMA (from ground truth):
+Columns: {target_columns}
+Sample rows:
+{target_sample}
+
+TASK:
+Design a complete transformation plan to convert the source Excel into the target format.
+
+1. TRANSFORMATION STEPS:
+   List each transformation step in order with clear descriptions.
+
+2. FIELD MAPPINGS:
+   Map source data to target columns.
+
+3. DATA OPERATIONS:
+   What operations are needed? (pivot, unpivot, merge, split, aggregate, filter, etc.)
+
+4. CALCULATION LOGIC:
+   Any derived fields or calculations needed?
+
+5. DATA QUALITY:
+   What cleaning or validation is needed?
+
+OUTPUT FORMAT (JSON):
+{{
+  "target_schema": {{
+    "columns": ["col1", "col2"],
+    "data_types": {{"col1": "type"}},
+    "primary_key": "column_name or null",
+    "expected_row_count": number or "unknown"
+  }},
+  "transformation_steps": [
+    {{
+      "step_number": 1,
+      "operation": "extract_blocks/unpivot/filter/merge/etc",
+      "description": "detailed description of what this step does",
+      "input": "what data it operates on",
+      "output": "what it produces"
+    }}
+  ],
+  "field_mappings": {{
+    "target_column": {{
+      "source": "source location/column",
+      "transformation": "how to extract/transform",
+      "example": "example value"
+    }}
+  }},
+  "required_operations": [
+    {{
+      "operation_type": "pivot/unpivot/merge/etc",
+      "details": "specific details"
+    }}
+  ],
+  "data_quality_rules": [
+    {{
+      "rule": "remove rows where X",
+      "reason": "why"
+    }}
+  ],
+  "complexity_estimate": "low/medium/high",
+  "confidence_score": 0.0 to 1.0
+}}
